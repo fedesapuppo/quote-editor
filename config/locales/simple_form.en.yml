@@ -29,6 +29,9 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+
+en:
+  simple_form:
     placeholders:
       quote:
         name: Name of your quote
@@ -36,8 +39,9 @@ en:
       quote:
         name: Name
 
-    helpers:
-      submit:
-        quote:
-          create: Create quote
-          update: Update quote
+  helpers:
+    submit:
+      quote:
+        create: Create quote
+        update: Update quote
+        

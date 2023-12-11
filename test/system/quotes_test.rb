@@ -13,14 +13,14 @@ class QuotesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "New quote"
 
     fill_in "Name", with: "Capybara quote"
-    click_on "Create quote"
+    click_on "Create Quote"
     assert_selector "h1", text: "Quotes"
     assert_text "Capybara quote"
   end
 
   test "Showing a quote" do
     visit quotes_path
-    click_link @quote.Name
+    click_link @quote.name
 
     assert_selector "h1", text: @quote.name
   end
@@ -32,8 +32,8 @@ class QuotesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
     assert_selector "h1", text: "Edit quote"
 
-    fill_in "Name", with: "Udated quote"
-    click_on "Update quote"
+    fill_in "Name", with: "Updated quote"
+    click_on "Update Quote"
 
     assert_selector "h1", text: "Quotes"
     assert_text "Updated quote"

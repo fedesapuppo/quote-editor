@@ -16,7 +16,12 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
 
     if @quote.save
-      redirect_to quotes_path, notice: "Quote was successfully created."
+      respond_to do |format|
+        format.html { redirect_to quotes_path, notice: "Quote was successfully created." }
+        # format.turbo_stream
+        # format.turbo_stream { render turbo_stream: turbo_stream.prepend(@quote) }
+        format.turbo_stream { render turbo_stream: turbo_stream.prepend("quotes", partial: @quote) }
+      end
     else
       render :new, status: :unprocessable_entity
     end

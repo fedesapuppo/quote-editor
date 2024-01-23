@@ -19,8 +19,6 @@ class LineItemDatesController < ApplicationController
     end
   end
 
-  def edit; end
-
   def update
     if @line_item_date.update(line_item_date_params)
       respond_to do |format|

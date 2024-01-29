@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'quotes#index'
   resources :quotes do
     resources :line_item_dates, except: %i[index show] do
-      resourses :line_items, except: %i[index show]
+      resources :line_items, except: %i[index show]
     end
   end
 end
